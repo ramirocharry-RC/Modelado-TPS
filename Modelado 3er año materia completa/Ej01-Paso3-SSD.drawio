@@ -1,0 +1,122 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="ssd" name="SSD Salir del estacionamiento">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="l1" value="Conductor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;collapsible=0;recursiveResize=0;outlineConnect=0;size=40;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="50" y="40" width="100" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" value=":SistemaEstacionamiento" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;collapsible=0;recursiveResize=0;outlineConnect=0;size=40;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="40" width="150" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" value=":PasarelaPago" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;collapsible=0;recursiveResize=0;outlineConnect=0;size=40;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="590" y="40" width="100" height="640" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" value=":BarreraSalida" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;collapsible=0;recursiveResize=0;outlineConnect=0;size=40;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="830" y="40" width="100" height="640" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f1" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;width=40;height=20;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="215" width="680" height="175" as="geometry"/>
+        </mxCell>
+        <mxCell id="f1g1" value="[medio = tarjeta]" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="90" y="218" width="140" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="f1div" style="endArrow=none;dashed=1;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="312" as="sourcePoint"/>
+            <mxPoint x="720" y="312" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f1g2" value="[medio = efectivo]" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="50" y="314" width="140" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="f2" value="alt" style="shape=umlFrame;whiteSpace=wrap;html=1;width=40;height=20;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="490" width="660" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="f2g1" value="[ticket pagado y dentro de 20 min]" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="350" y="493" width="220" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="f2div" style="endArrow=none;dashed=1;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="568" as="sourcePoint"/>
+            <mxPoint x="960" y="568" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f2g2" value="[vencido o sin pagar]" style="text;html=1;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="570" width="180" height="20" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="m1" value="1: insertarTicket(codigo: String)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="120" as="sourcePoint"/>
+            <mxPoint x="380" y="120" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r1" value="monto: Dinero" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="155" as="sourcePoint"/>
+            <mxPoint x="100" y="155" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m2" value="2: pagar(medio: MedioPago)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="195" as="sourcePoint"/>
+            <mxPoint x="380" y="195" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m3" value="3: autorizarCobro(monto: Dinero)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="255" as="sourcePoint"/>
+            <mxPoint x="640" y="255" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3" value="autorizacion: Autorizacion" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="290" as="sourcePoint"/>
+            <mxPoint x="380" y="290" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m4" value="4: ingresarEfectivo(importe: Dinero)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="100" y="345" as="sourcePoint"/>
+            <mxPoint x="380" y="345" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r4" value="vuelto: Dinero" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="375" as="sourcePoint"/>
+            <mxPoint x="100" y="375" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r2" value="comprobante: Comprobante" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="425" as="sourcePoint"/>
+            <mxPoint x="100" y="425" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m5" value="5: validarSalida(codigo: String)" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="880" y="460" as="sourcePoint"/>
+            <mxPoint x="380" y="460" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m6" value="6: abrir()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="535" as="sourcePoint"/>
+            <mxPoint x="880" y="535" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="m7" value="7: rechazar()" style="html=1;verticalAlign=bottom;endArrow=block;endFill=1;fontSize=11;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="610" as="sourcePoint"/>
+            <mxPoint x="880" y="610" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

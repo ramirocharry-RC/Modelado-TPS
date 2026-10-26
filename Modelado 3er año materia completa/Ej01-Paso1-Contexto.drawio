@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="contexto" name="Contexto">
+    <mxGraphModel dx="1100" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="sys" value="Sistema de Estacionamiento&#xa;&quot;Paseo del Sur&quot;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="400" y="260" width="240" height="140" as="geometry"/>
+        </mxCell>
+        <mxCell id="conductor" value="Conductor&#xa;(primario)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="300" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="admin" value="Administrador&#xa;(primario)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="entrada" value="Barrera de Entrada&#xa;(secundario)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="860" y="60" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pasarela" value="Pasarela de Pago&#xa;(secundario)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="860" y="290" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="salida" value="Barrera de Salida&#xa;(secundario)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="860" y="520" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="reloj" value="Reloj&#xa;(secundario, opcional)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="560" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="solicita ingreso, inserta ticket, elige medio y paga&#xa;&#xa;ticket (hora y plaza), monto, comprobante" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="conductor" target="sys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="solicita reporte mensual&#xa;&#xa;reporte de movimientos" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="admin" target="sys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="vehículo detectado&#xa;&#xa;abrir" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="entrada" target="sys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="solicitud de cobro (monto)&#xa;&#xa;aprobado / rechazado" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="pasarela" target="sys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="ticket leído&#xa;&#xa;abrir / rechazar" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="salida" target="sys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="vencieron 20 min" style="endArrow=classic;html=1;fontSize=11;" edge="1" parent="1" source="reloj" target="sys">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

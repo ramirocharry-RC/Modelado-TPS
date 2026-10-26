@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="estados" name="Estados de Ticket">
+    <mxGraphModel dx="1300" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <mxCell id="ini" value="" style="ellipse;html=1;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="60" y="200" width="24" height="24" as="geometry"/>
+        </mxCell>
+        <mxCell id="emi" value="Emitido" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="170" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="pag" value="Pagado" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="170" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="sal" value="Salido" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="980" y="170" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="ven" value="Vencido" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="420" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="anu" value="Anulado" style="rounded=1;arcSize=30;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="420" width="140" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="fin1" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="1035" y="360" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="fin2" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="215" y="580" width="30" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="t0" value="imprimirTicket() /&lt;br&gt;asignar plaza, registrar ingreso" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="ini" target="emi">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t1" value="pagar() [permanencia ≤ 15 min]&lt;br&gt;/ monto = 0 (cortesía), emitir comprobante" style="endArrow=classic;html=1;fontSize=10;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="emi" target="pag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2" value="pagar() [permanencia &gt; 15 min y pago aprobado]&lt;br&gt;/ calcular monto (tope diario si &gt; 24 h),&lt;br&gt;registrar pago, emitir comprobante" style="endArrow=classic;html=1;fontSize=10;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="emi" target="pag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3" value="anular() [ticket perdido o dañado]&lt;br&gt;/ liberar plaza" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="emi" target="anu">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t4" value="pasarBarrera() [dentro de 20 min]&lt;br&gt;/ abrirBarrera, registrar egreso, liberar plaza" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="pag" target="sal">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t5" value="after(20 min)&lt;br&gt;/ invalidar ticket" style="endArrow=classic;html=1;fontSize=10;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="pag" target="ven">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t6" value="pagarCargoAdicional()&lt;br&gt;/ registrar pago, emitir comprobante" style="endArrow=classic;html=1;fontSize=10;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ven" target="pag">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t7" value="archivar()" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="sal" target="fin1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t8" value="archivar()" style="endArrow=classic;html=1;fontSize=10;" edge="1" parent="1" source="anu" target="fin2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
